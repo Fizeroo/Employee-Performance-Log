@@ -1,0 +1,96 @@
+Test Case 1: Add Evaluation
+Description : Validate that a new evaluation can be added successfully.
+Input :
+Employee ID: E001
+Name: John Doe
+Rating: 4.5
+Feedback: Great work!
+Expected Output :
+Evaluation added successfully!
+Explanation : The system creates a new evaluation record, adds it to the list, and saves it to the file.
+
+Test Case 2: View Evaluations
+Description : Validate that all evaluations can be viewed correctly.
+Input : Choose "View Evaluations" from the menu.
+Expected Output :
+Employee ID: E001, Name: John Doe, Rating: 4.5, Feedback: Great work!
+Explanation : The system loads all evaluations from the file and displays them in a readable format.
+
+Test Case 3: Update Evaluation
+Description : Validate that an existing evaluation can be updated successfully.
+Input :
+Employee ID: E001
+New Rating: 5.0
+New Feedback: Excellent performance!
+Expected Output :
+Evaluation updated successfully!
+Explanation : The system finds the evaluation by employeeId, updates its fields, and saves the changes to the file.
+
+
+Test Case 4: Delete Evaluation
+Description : Validate that an evaluation can be deleted successfully.
+Input :
+Employee ID: E001
+Expected Output :
+Evaluation deleted successfully!
+Explanation : The system finds the evaluation by employeeId, removes it from the list, and updates the file.
+
+
+Test Case 5: Generate Report
+Description : Validate that summary reports are generated correctly.
+Input : Choose "Generate Report" from the menu.
+Expected Output :
+Total Evaluations: 2
+Average Rating: 4.75
+Explanation : The system calculates the total number of evaluations and the average rating based on stored data.
+
+
+Test Case 6: Invalid Input for Rating
+Description : Validate that invalid ratings (e.g., out of range) are handled gracefully.
+Input :
+Employee ID: E002
+Name: Alice Smith
+Rating: 6.0 (invalid)
+Feedback: Good effort.
+Expected Output :
+Error: Rating must be between 1 and 5. Please try again.
+Explanation : The system prompts the user to re-enter a valid rating.
+
+
+Test Case 7: Empty Feedback
+Description : Validate that empty feedback fields are handled gracefully.
+Input :
+Employee ID: E003
+Name: Bob Johnson
+Rating: 4.0
+Feedback: `` (empty)
+Expected Output :
+Error: Feedback cannot be empty. Please try again.
+Explanation : The system ensures that required fields are not left empty.
+
+
+Test Case 8: Nonexistent Employee ID for Update
+Description : Validate that the system handles nonexistent employeeId during an update operation.
+Input :
+Employee ID: E999 (nonexistent)
+Expected Output :
+Employee ID not found.
+Explanation : The system searches for the employeeId and informs the user if it does not exist.
+
+
+Test Case 9: Nonexistent Employee ID for Delete
+Description : Validate that the system handles nonexistent employeeId during a delete operation.
+Input :
+Employee ID: E999 (nonexistent)
+Expected Output :  
+Employee ID not found.
+Explanation : The system searches for the employeeId and informs the user if it does not exist.
+
+
+Test Case 10: Empty File
+Description : Validate that the system handles an empty file gracefully.
+Input : Run the program with an empty evaluations.txt file.
+Expected Output :
+No evaluations found.
+Explanation : The system checks if the file is empty and informs the user accordingly.  
+
