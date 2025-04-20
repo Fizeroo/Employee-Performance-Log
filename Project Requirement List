@@ -1,0 +1,11 @@
+Key Requirements
+CRUD Operations : Allow users to create, read, update, and delete employee evaluations.
+Command-Line Interface : Provide a menu-driven interface for user interaction.
+Input Validation : Validate user inputs to prevent invalid data entry.
+Data Persistence : Store evaluation data in a file (evaluations.txt) for persistence.
+Modular Design : Divide the code into logical modules (e.g., Evaluation, FileUtils, EvaluationManager).
+Report Generation : Generate summary reports (e.g., total evaluations, average rating).
+Error Handling : Handle unexpected errors gracefully (e.g., file not found, invalid input).
+Documentation : Provide clear documentation in the README.md file.
+Test Cases : Include sample test cases and expected outputs.
+Screenshots : Demonstrate the implementation of all features with screenshots.
