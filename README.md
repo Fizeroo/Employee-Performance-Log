@@ -7,7 +7,7 @@ Employee Performance Evaluation System
 This project implements a simple command-line application for managing employee performance evaluations. It allows users to log performance metrics, feedback, and ratings. The system supports CRUD operations (Create, Read, Update, Delete) and generates summary reports.
 
 ## Student Name
-John Doe
+Bekbolotov Emir
 
 ## Purpose and Functionality
 The purpose of this project is to create a user-friendly application that helps organizations track and manage employee performance evaluations. The system provides the following functionalities:
