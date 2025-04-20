@@ -1,0 +1,58 @@
+Documentation
+1. Algorithms
+CRUD Operations
+Create : A new evaluation is created as an object of the Evaluation class and added to an ArrayList. The updated list is then saved to a file (evaluations.txt) using the FileUtils.saveEvaluations() method.
+Read : Evaluations are loaded from the file into an ArrayList using the FileUtils.loadEvaluations() method. Each line in the file is parsed into an Evaluation object.
+Update : The system searches for an evaluation by employeeId in the ArrayList. If found, the corresponding fields (e.g., rating, feedback) are updated, and the changes are saved back to the file.
+Delete : The system searches for an evaluation by employeeId in the ArrayList. If found, the evaluation is removed from the list, and the updated list is saved to the file.
+Report Generation
+Total Evaluations : The size of the ArrayList is used to determine the total number of evaluations.
+Average Rating : The system calculates the sum of all ratings in the ArrayList and divides it by the total number of evaluations.
+Input Validation
+Ensures that:
+Ratings are numeric and within the range of 1 to 5.
+Required fields (e.g., employeeId, name) are not empty.
+Invalid inputs prompt the user to re-enter data.
+2. Data Structures
+ArrayList
+Used to store and manage employee evaluations dynamically. Each evaluation is represented as an object of the Evaluation class. The ArrayList allows easy addition, removal, and modification of evaluations.
+String
+Used to store text-based data such as employeeId, name, and feedback.
+Double
+Used to store numeric data such as rating.
+File
+Used to persist evaluation data in a .txt file (evaluations.txt). The file uses a comma-separated format (CSV) for easy parsing and storage.
+3. Functions/Modules
+Evaluation.java
+Represents an employee evaluation record.
+Contains fields such as employeeId, name, rating, and feedback.
+Provides getters and setters for accessing and modifying field values.
+Overrides the toString() method to display evaluation details in a readable format.
+FileUtils.java
+Handles file operations:
+Save : Writes evaluation data to the file in CSV format using BufferedWriter.
+Load : Reads evaluation data from the file using BufferedReader and converts it into Evaluation objects.
+EvaluationManager.java
+Manages CRUD operations and report generation.
+Provides methods for adding, viewing, updating, and deleting evaluations.
+Generates summary reports (total evaluations, average rating).
+Main.java
+Serves as the entry point of the application.
+Provides a menu-driven interface for user interaction.
+Calls methods from EvaluationManager to perform operations based on user input.
+4. Challenges Faced
+File Handling :
+Ensuring data is correctly written to and read from the file without corruption.
+Handling edge cases such as an empty file or missing fields.
+Input Validation :
+Preventing invalid inputs (e.g., empty fields, non-numeric ratings).
+Providing meaningful error messages to guide the user.
+Modular Design :
+Dividing the code into logical modules without introducing unnecessary complexity.
+Ensuring each module has a single responsibility.
+Error Handling :
+Gracefully handling unexpected errors (e.g., file not found, invalid input).
+Avoiding crashes and ensuring the program continues to function.
+User Experience :
+Creating a user-friendly command-line interface with clear menus and prompts.
+Ensuring the program responds appropriately to invalid user inputs.
