@@ -1,0 +1,31 @@
+# Employee Performance Evaluation System
+
+## Description
+This project implements a simple command-line application for managing employee performance evaluations. It supports CRUD operations and generates summary reports.
+
+## Features
+- Create, Read, Update, and Delete employee evaluations.
+- Persistent storage using text files.
+- Summary report generation (total evaluations, average rating).
+- Input validation to prevent invalid data entry.
+
+## Requirements
+- Java 11 or higher.
+- A text editor or IDE (e.g., IntelliJ IDEA, Eclipse).
+
+## Usage
+1. Clone the repository.
+2. Run the `Main.java` file.
+3. Follow the on-screen instructions to perform CRUD operations.
+
+## Presentation
+[Presentation Link](https://github.com/your-repo/presentation/slides.pptx)
+
+## Data Export/Import
+Export/import functionality can be implemented using CSV or JSON formats.
+
+## Contributing
+Feel free to contribute by opening issues or pull requests.
+
+## License
+MIT License
