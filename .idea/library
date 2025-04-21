@@ -1,0 +1,77 @@
+poisk ocenok po criteriyam
+public void searchEvaluations(Scanner scanner) {
+    System.out.println("Choose search criteria:");
+    System.out.println("1. Search by Employee ID");
+    System.out.println("2. Search by Employee Name");
+    System.out.println("3. Search by Rating");
+    int choice = Integer.parseInt(scanner.nextLine());
+
+    List<Evaluation> results = new ArrayList<>();
+
+    switch (choice) {
+        case 1:
+            System.out.print("Enter Employee ID to search: ");
+            String employeeId = readNonEmptyInput(scanner, "Employee ID cannot be empty.");
+            results = evaluations.stream()
+                    .filter(e -> e.getEmployeeId().equalsIgnoreCase(employeeId))
+                    .toList();
+            break;
+        case 2:
+            System.out.print("Enter Employee Name to search: ");
+            String name = readNonEmptyInput(scanner, "Name cannot be empty.");
+            results = evaluations.stream()
+                    .filter(e -> e.getName().toLowerCase().contains(name.toLowerCase()))
+                    .toList();
+            break;
+        case 3:
+            System.out.print("Enter minimum Rating to search: ");
+            double minRating = readValidRating(scanner);
+            results = evaluations.stream()
+                    .filter(e -> e.getRating() >= minRating)
+                    .toList();
+            break;
+        default:
+            System.out.println("Invalid choice.");
+            return;
+    }
+
+    if (results.isEmpty()) {
+        System.out.println("No evaluations found matching the criteria.");
+    } else {
+        System.out.println("Search Results:");
+        for (Evaluation eval : results) {
+            System.out.println(eval);
+        }
+    }
+}
+
+
+sortirovka ocenok
+
+public void sortEvaluations(Scanner scanner) {
+    System.out.println("Choose sorting criteria:");
+    System.out.println("1. Sort by Rating (Ascending)");
+    System.out.println("2. Sort by Rating (Descending)");
+    System.out.println("3. Sort by Employee Name (Alphabetical Order)");
+    int choice = Integer.parseInt(scanner.nextLine());
+
+    switch (choice) {
+        case 1:
+            evaluations.sort((e1, e2) -> Double.compare(e1.getRating(), e2.getRating()));
+            break;
+        case 2:
+            evaluations.sort((e1, e2) -> Double.compare(e2.getRating(), e1.getRating()));
+            break;
+        case 3:
+            evaluations.sort((e1, e2) -> e1.getName().compareToIgnoreCase(e2.getName()));
+            break;
+        default:
+            System.out.println("Invalid choice.");
+            return;
+    }
+
+    System.out.println("Sorted Evaluations:");
+    for (Evaluation eval : evaluations) {
+        System.out.println(eval);
+    }
+}
