@@ -12,7 +12,10 @@ public class Main {
             System.out.println("3. Update Evaluation");
             System.out.println("4. Delete Evaluation");
             System.out.println("5. Generate Report");
-            System.out.println("6. Exit");
+            System.out.println("6. Export to JSON");
+            System.out.println("7. Import from JSON");
+            System.out.println("8. Exit");
+
             System.out.print("Choose an option: ");
 
             int choice = Integer.parseInt(scanner.nextLine());
@@ -34,7 +37,14 @@ public class Main {
                     manager.generateReport();
                     break;
                 case 6:
+                    manager.exportToJson();
+                    break;
+                case 7:
+                    manager.importFromJson();
+                    break;
+                case 8:
                     System.out.println("Exiting...");
+
                     scanner.close();
                     return;
                 default:

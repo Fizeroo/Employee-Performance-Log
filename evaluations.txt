@@ -1,2 +1,0 @@
-five,guy,5.0,GOOD
-one,NURBEK,2.0,bad

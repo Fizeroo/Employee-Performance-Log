@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -123,6 +122,15 @@ public class EvaluationManager {
         }
         return input;
     }
+    public void exportToJson() {
+        FileUtils.exportToJson(evaluations);
+    }
+
+    public void importFromJson() {
+        FileUtils.importFromJson(evaluations);
+        FileUtils.saveEvaluations(evaluations); // Чтобы сохранить в txt после импорта
+    }
+
 
     private double readValidRating(Scanner scanner) {
         double rating = 0;

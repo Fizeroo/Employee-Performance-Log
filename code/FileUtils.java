@@ -2,6 +2,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.Reader;
+import java.io.Writer;
+
 public class FileUtils {
     private static final String FILE_PATH = "data/evaluations.txt";
 
@@ -31,4 +36,28 @@ public class FileUtils {
         }
         return evaluations;
     }
+
+    private static final String JSON_PATH = "data/evaluations.json";
+
+    public static void exportToJson(List<Evaluation> evaluations) {
+        try (Writer writer = new FileWriter(JSON_PATH)) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(evaluations, writer);
+            System.out.println("Exported to evaluations.json");
+        } catch (IOException e) {
+            System.err.println("Error exporting to JSON: " + e.getMessage());
+        }
+    }
+
+    public static void importFromJson(List<Evaluation> evaluations) {
+        try (Reader reader = new FileReader(JSON_PATH)) {
+            Gson gson = new Gson();
+            Evaluation[] imported = gson.fromJson(reader, Evaluation[].class);
+            evaluations.addAll(List.of(imported));
+            System.out.println("Imported from evaluations.json");
+        } catch (IOException e) {
+            System.err.println("Error importing from JSON: " + e.getMessage());
+        }
+    }
+
 }
